@@ -196,10 +196,10 @@ export const poems: Poem[] = [
     // poem 2
     id: 'a-year-of-recall',
     title: 'A Year of Recall',
-    whois: ['Mommy'],
+    whois: ['Mommy', 'Papa', 'Grandma', 'Grandpa', 'tita'],
     author: 'Francis Lawrence P. Morales',
-    password: 'dana1',
-    moods: ['hopeful', 'peaceful', 'grateful'],
+    password: 'yearofrecall',
+    moods: ['reflective', 'hopeful', 'grateful'],
     stanzas: [
       [
         'I am the New Year, and I come to you pure and unstained,',
