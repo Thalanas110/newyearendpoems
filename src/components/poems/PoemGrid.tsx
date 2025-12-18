@@ -211,7 +211,7 @@ export function PoemGrid({ onLogout }: PoemGridProps) {
           className="text-center mt-20 pt-12 border-t border-[#D4AF37]/10"
         >
           <p className="text-[#F5F0E6]/40 text-sm">
-            May these words bring peace and hope as you welcome the new year
+            © Adriaan Dimate, 2025. All rights reserved.
           </p>
         </motion.footer>
       </div>
