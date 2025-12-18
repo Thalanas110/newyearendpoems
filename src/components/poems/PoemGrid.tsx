@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useCallback } from 'react'
 import { motion } from 'motion/react'
 import { Sparkles, Heart, LogOut } from 'lucide-react'
 import { PoemCard } from './PoemCard'
@@ -22,24 +22,68 @@ interface PoemGridProps {
 }
 
 const UNLOCKED_POEMS_KEY = 'nye-unlocked-poems'
+const POEM_LOCK_TIMEOUT_MS = 15 * 60 * 1000 // 15 minutes
+
+// Storage format: { poemId: lastViewedTimestamp }
+type UnlockedPoemsRecord = Record<string, number>
 
 export function PoemGrid({ onLogout }: PoemGridProps) {
-  const [unlockedPoems, setUnlockedPoems] = useState<Set<string>>(() => {
+  const [unlockedPoems, setUnlockedPoems] = useState<UnlockedPoemsRecord>(() => {
     // Load unlocked poems from session storage
     if (typeof window !== 'undefined') {
       const stored = sessionStorage.getItem(UNLOCKED_POEMS_KEY)
       if (stored) {
         try {
-          return new Set(JSON.parse(stored))
+          const parsed = JSON.parse(stored)
+          // Handle migration from old Set format to new Record format
+          if (Array.isArray(parsed)) {
+            const migrated: UnlockedPoemsRecord = {}
+            parsed.forEach((id: string) => {
+              migrated[id] = Date.now()
+            })
+            return migrated
+          }
+          return parsed as UnlockedPoemsRecord
         } catch {
-          return new Set()
+          return {}
         }
       }
     }
-    return new Set()
+    return {}
   })
   const [selectedPoemId, setSelectedPoemId] = useState<string | null>(null)
   const [selectedMood, setSelectedMood] = useState<Mood | null>(null)
+
+  // Check for stale poems and auto-lock them every minute
+  useEffect(() => {
+    const checkAndLockStalePoems = () => {
+      const now = Date.now()
+      let hasChanges = false
+      const updated: UnlockedPoemsRecord = {}
+
+      Object.entries(unlockedPoems).forEach(([poemId, lastViewed]) => {
+        if (now - lastViewed < POEM_LOCK_TIMEOUT_MS) {
+          // Still valid, keep it
+          updated[poemId] = lastViewed
+        } else {
+          // Poem is stale, don't include it (auto-lock)
+          hasChanges = true
+        }
+      })
+
+      if (hasChanges) {
+        setUnlockedPoems(updated)
+        sessionStorage.setItem(UNLOCKED_POEMS_KEY, JSON.stringify(updated))
+      }
+    }
+
+    // Check immediately on mount
+    checkAndLockStalePoems()
+
+    // Then check every minute
+    const interval = setInterval(checkAndLockStalePoems, 60 * 1000)
+    return () => clearInterval(interval)
+  }, [unlockedPoems])
 
   // Filter poems based on selected mood
   const filteredPoems = useMemo(() => {
@@ -47,18 +91,24 @@ export function PoemGrid({ onLogout }: PoemGridProps) {
     return poems.filter((poem) => poem.moods.includes(selectedMood))
   }, [selectedMood])
 
-  const handleUnlock = (poemId: string) => {
-    const newUnlocked = new Set(unlockedPoems)
-    newUnlocked.add(poemId)
+  const handleUnlock = useCallback((poemId: string) => {
+    // Update the last viewed timestamp (works for both unlock and view)
+    const newUnlocked = { ...unlockedPoems, [poemId]: Date.now() }
     setUnlockedPoems(newUnlocked)
-    sessionStorage.setItem(UNLOCKED_POEMS_KEY, JSON.stringify([...newUnlocked]))
+    sessionStorage.setItem(UNLOCKED_POEMS_KEY, JSON.stringify(newUnlocked))
     // Navigate to the poem page
     setSelectedPoemId(poemId)
-  }
+  }, [unlockedPoems])
 
-  const handleBack = () => {
+  const handleBack = useCallback(() => {
+    // Update the last viewed timestamp when leaving the poem
+    if (selectedPoemId && unlockedPoems[selectedPoemId]) {
+      const newUnlocked = { ...unlockedPoems, [selectedPoemId]: Date.now() }
+      setUnlockedPoems(newUnlocked)
+      sessionStorage.setItem(UNLOCKED_POEMS_KEY, JSON.stringify(newUnlocked))
+    }
     setSelectedPoemId(null)
-  }
+  }, [selectedPoemId, unlockedPoems])
 
   // If a poem is selected, show the full poem page
   const selectedPoem = selectedPoemId
@@ -176,7 +226,7 @@ export function PoemGrid({ onLogout }: PoemGridProps) {
                 poem={poem}
                 index={index}
                 onUnlock={handleUnlock}
-                isUnlocked={unlockedPoems.has(poem.id)}
+                isUnlocked={poem.id in unlockedPoems}
               />
             ))
           ) : (

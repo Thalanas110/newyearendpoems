@@ -1,13 +1,27 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { PasswordGate } from './PasswordGate'
 import { PoemGrid } from './PoemGrid'
 import { SnowEffect } from './SnowEffect'
+import { useIdleTimeout } from '@/hooks/use-idle-timeout'
 
 const STORAGE_KEY = 'nye-poems-authenticated'
+const IDLE_TIMEOUT_MS = 5 * 60 * 1000 // 5 minutes
 
 export function NewYearPoems() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+
+  const handleLogout = useCallback(() => {
+    sessionStorage.removeItem(STORAGE_KEY)
+    setIsAuthenticated(false)
+  }, [])
+
+  // Auto sign-out after 5 minutes of inactivity (only when authenticated)
+  useIdleTimeout({
+    timeout: IDLE_TIMEOUT_MS,
+    onIdle: handleLogout,
+    enabled: isAuthenticated,
+  })
 
   useEffect(() => {
     // Check if user has already authenticated in this session
@@ -21,11 +35,6 @@ export function NewYearPoems() {
   const handleAuthenticate = () => {
     sessionStorage.setItem(STORAGE_KEY, 'true')
     setIsAuthenticated(true)
-  }
-
-  const handleLogout = () => {
-    sessionStorage.removeItem(STORAGE_KEY)
-    setIsAuthenticated(false)
   }
 
   // Prevent flash of content
