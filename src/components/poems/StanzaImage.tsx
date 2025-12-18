@@ -126,7 +126,7 @@ export function StanzaImage({
     // Watermark
     ctx.fillStyle = 'rgba(212, 175, 55, 0.3)'
     ctx.font = '18px Georgia, serif'
-    ctx.fillText("New Year's Eve Poetry Collection", width / 2, height - 40)
+    ctx.fillText("2025 Recall of Events", width / 2, height - 40)
 
     // Get data URL
     const dataUrl = canvas.toDataURL('image/png')

@@ -66,10 +66,10 @@ export function PasswordGate({ onSuccess }: PasswordGateProps) {
             <Sparkles className="w-8 h-8 text-[#D4AF37]" />
           </motion.div>
           <h1 className="text-3xl font-serif text-[#F5F0E6] mb-2">
-            New Year's Eve Poetry
+            A Year of Recall
           </h1>
           <p className="text-[#F5F0E6]/60 text-sm">
-            A private collection for family & friends
+            Major top secret!
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export function PasswordGate({ onSuccess }: PasswordGateProps) {
           <div className="flex items-center gap-3 mb-6 pb-4 border-b border-[#D4AF37]/10">
             <Lock className="w-5 h-5 text-[#D4AF37]" />
             <span className="text-[#F5F0E6]/80 text-sm">
-              Enter the family password to continue
+              Enter the password to continue! (password ng cp ni mama)
             </span>
           </div>
 
