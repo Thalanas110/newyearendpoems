@@ -1,0 +1,530 @@
+export type Mood =
+  | 'hopeful'
+  | 'reflective'
+  | 'nostalgic'
+  | 'joyful'
+  | 'peaceful'
+  | 'grateful'
+
+
+export type Persona =
+  | 'Mommy'
+  | 'Papa'
+  | 'Grandma'
+  | 'Grandpa'
+  | 'tita'
+  | 'Aso ng isda ng chuk'
+
+export const WHOIS: {
+  id: Persona
+  label: string
+  emoji: string
+  description: string
+}[] = [
+    {
+      id: 'Mommy',
+      label: 'Mommy',
+      emoji: '👩',
+      description: 'Your mom',
+    },
+    {
+      id: 'Papa',
+      label: 'Papa',
+      emoji: '👨',
+      description: 'Your dad',
+    },
+    {
+      id: 'Grandma',
+      label: 'Grandma',
+      emoji: '👵',
+      description: 'Your grandma',
+    },
+    {
+      id: 'Grandpa',
+      label: 'Grandpa',
+      emoji: '👴',
+      description: 'Your grandpa',
+    },
+    {
+      id: 'tita',
+      label: 'tita',
+      emoji: '👩',
+      description: 'Your auntie',
+    },
+    {
+      id: 'Aso ng isda ng chuk',
+      label: 'Aso ng isda ng chuk',
+      emoji: '🐕',
+      description: 'aso ng aso ng aso ng chuk',
+    },
+  ]
+
+
+export const MOODS: {
+  id: Mood
+  label: string
+  emoji: string
+  description: string
+}[] = [
+    {
+      id: 'hopeful',
+      label: 'Hopeful',
+      emoji: '✨',
+      description: 'Looking forward with optimism',
+    },
+    {
+      id: 'reflective',
+      label: 'Reflective',
+      emoji: '🌙',
+      description: 'Contemplating life and time',
+    },
+    {
+      id: 'nostalgic',
+      label: 'Nostalgic',
+      emoji: '🍂',
+      description: 'Remembering the past fondly',
+    },
+    {
+      id: 'joyful',
+      label: 'Joyful',
+      emoji: '🎉',
+      description: 'Celebrating with happiness',
+    },
+    {
+      id: 'peaceful',
+      label: 'Peaceful',
+      emoji: '🕊️',
+      description: 'Finding calm and serenity',
+    },
+    {
+      id: 'grateful',
+      label: 'Grateful',
+      emoji: '💛',
+      description: 'Appreciating what we have',
+    },
+  ]
+
+export interface Poem {
+  id: string
+  title: string
+  whois: Persona[]
+  author: string
+  stanzas: string[][]
+  password: string
+  moods: Mood[]
+}
+
+export const poems: Poem[] = [
+  {
+    id: 'ring-out-wild-bells',
+    title: 'Ring Out, Wild Bells',
+    whois: ['Mommy'],
+    author: 'Alfred, Lord Tennyson',
+    password: 'dana',
+    moods: ['hopeful', 'reflective'],
+    stanzas: [
+      [
+        'Ring out, wild bells, to the wild sky,',
+        'The flying cloud, the frosty light:',
+        'The year is dying in the night;',
+        'Ring out, wild bells, and let him die.',
+      ],
+      [
+        'Ring out the old, ring in the new,',
+        'Ring, happy bells, across the snow:',
+        'The year is going, let him go;',
+        'Ring out the false, ring in the true.',
+      ],
+      [
+        'Ring out the grief that saps the mind',
+        'For those that here we see no more;',
+        'Ring out the feud of rich and poor,',
+        'Ring in redress to all mankind.',
+      ],
+      [
+        'Ring out a slowly dying cause,',
+        'And ancient forms of party strife;',
+        'Ring in the nobler modes of life,',
+        'With sweeter manners, purer laws.',
+      ],
+      [
+        'Ring out false pride in place and blood,',
+        'The civic slander and the spite;',
+        'Ring in the love of truth and right,',
+        'Ring in the common love of good.',
+      ],
+      [
+        'Ring out old shapes of foul disease;',
+        'Ring out the narrowing lust of gold;',
+        'Ring out the thousand wars of old,',
+        'Ring in the thousand years of peace.',
+      ],
+    ],
+  },
+  {
+    id: 'the-new-year',
+    title: 'The New Year',
+    whois: ['Mommy'],
+    author: 'Ella Wheeler Wilcox',
+    password: 'dana1',
+    moods: ['hopeful', 'peaceful', 'grateful'],
+    stanzas: [
+      [
+        'I am the New Year, and I come to you pure and unstained,',
+        'Fresh from the hand of God.',
+        'Each day, a precious pearl to you is given',
+        'That you must string upon the silver thread of life.',
+      ],
+      [
+        'Once strung can never be unthreaded but stays',
+        'An undying record of your faith and skill.',
+        'Each golden, glowing dawn is given you',
+        'As a new day to live, to love, to grow.',
+      ],
+      [
+        'Do not soil it with your doubts and fears,',
+        'But keep it bright and shining as the sun.',
+        'For in the end, when all your days are done,',
+        "You'll see the beauty of the pearls you've strung.",
+      ],
+    ],
+  },
+  {
+    id: 'new-years-day',
+    title: "New Year's Day",
+    whois: ['Mommy'],
+    author: 'Christina Rossetti',
+    password: 'dana2',
+    moods: ['reflective', 'nostalgic'],
+    stanzas: [
+      [
+        'Passing away, saith the World, passing away:',
+        'Chances, beauty and youth sapped day by day:',
+        'Thy life never continueth in one stay.',
+        'Is the eye waxen dim, is the dark hair changing to grey',
+      ],
+      [
+        'That hath won neither laurel nor bay?',
+        'I shall clothe myself in Spring and bud in May:',
+        'Thou, root-stricken, shalt not rebuild thy decay',
+        'On my bosom for aye.',
+      ],
+      [
+        'Then I answered: Yea.',
+        'Passing away, saith my Soul, passing away:',
+        'With its burden of fear and hope, of labour and play;',
+        'Hearken what the past doth witness and say:',
+      ],
+      [
+        'Rust in thy gold, a moth is in thine array,',
+        'A canker is in thy bud, thy leaf must decay.',
+        'At midnight, at cockcrow, at morning, one certain day,',
+        'Lo the Bridegroom shall come and shall not delay.',
+      ],
+    ],
+  },
+  {
+    id: 'a-new-years-burden',
+    title: "A New Year's Burden",
+    whois: ['Mommy'],
+    author: 'Dante Gabriel Rossetti',
+    password: 'dana3',
+    moods: ['joyful', 'hopeful'],
+    stanzas: [
+      [
+        'Along the grass sweet airs are blown',
+        'Our way this day in Spring.',
+        'Of all the songs that we have known',
+        'Now which one shall we sing?',
+      ],
+      [
+        'Not that, my love, ah no!—',
+        'Not this, my love? why, so!—',
+        'Yet both were ours, but hours will come and go.',
+        'The breathing Spring once more will bring.',
+      ],
+      [
+        'This day the air is new and strange,',
+        'The sun shines bright and clear;',
+        'And all the world seems full of change,',
+        'And hope for the new year.',
+      ],
+      [
+        'So let us sing a song of cheer,',
+        'And welcome in the Spring;',
+        'For though the old year disappear,',
+        'New joys the new year bring.',
+      ],
+    ],
+  },
+  {
+    id: 'death-of-the-old-year',
+    title: 'The Death of the Old Year',
+    whois: ['Mommy'],
+    author: 'Alfred, Lord Tennyson',
+    password: 'dana4',
+    moods: ['nostalgic', 'reflective'],
+    stanzas: [
+      [
+        'Full knee-deep lies the winter snow,',
+        'And the winter winds are wearily sighing:',
+        'Toll ye the church bell sad and slow,',
+        'And tread softly and speak low,',
+        'For the old year lies a-dying.',
+      ],
+      [
+        'Old year you must not die;',
+        'You came to us so readily,',
+        'You lived with us so steadily,',
+        'Old year you shall not die.',
+      ],
+      [
+        'He lieth still: he doth not move:',
+        'He will not see the dawn of day.',
+        'He hath no other life above.',
+        'He gave me a friend and a true true-love',
+        "And the New-year will take 'em away.",
+      ],
+      [
+        'Old year, you shall not go;',
+        'So long you have been with us,',
+        'Such joy you have been to us,',
+        'Old year, you shall not go.',
+      ],
+    ],
+  },
+  {
+    id: 'new-years-eve',
+    title: "New Year's Eve",
+    whois: ['Mommy'],
+    author: 'John Clare',
+    password: 'dana5',
+    moods: ['hopeful', 'nostalgic', 'peaceful'],
+    stanzas: [
+      [
+        'Old year, farewell! and welcome, new!',
+        'With all thy hopes and fears;',
+        'We part with sighs, we meet with tears,',
+        'And mingle joy with sorrow too.',
+      ],
+      [
+        "The old year's sun has set at last,",
+        'Its light no more we see;',
+        'But memory holds the happy past,',
+        'And hope looks on to thee.',
+      ],
+      [
+        'New year, we greet thee with a prayer,',
+        'That all thy days be bright;',
+        'That peace and love be everywhere,',
+        'And wrong give way to right.',
+      ],
+    ],
+  },
+  {
+    id: 'the-old-year',
+    title: 'The Old Year',
+    whois: ['Mommy'],
+    author: 'John Greenleaf Whittier',
+    password: 'dana6',
+    moods: ['reflective', 'peaceful'],
+    stanzas: [
+      [
+        'The mossy marbles rest',
+        'On the lips that he has prest',
+        'In their bloom,',
+        'And the names he loved to hear',
+        'Have been carved for many a year',
+        'On the tomb.',
+      ],
+      [
+        'My spirit ran before,',
+        "And I said, 'A year is o'er,",
+        'Come what may;',
+        "But the next year's buds shall bring",
+        'The same sweet flowers of spring,',
+        "Come what may.'",
+      ],
+      [
+        'So I turned me to the past,',
+        "And I said, 'The die is cast,",
+        'Come what may;',
+        'I will live as I have lived,',
+        'And love as I have loved,',
+        "Come what may.'",
+      ],
+    ],
+  },
+  {
+    id: 'auld-lang-syne',
+    title: 'Auld Lang Syne',
+    whois: ['Mommy'],
+    author: 'Robert Burns',
+    password: 'dana7',
+    moods: ['nostalgic', 'joyful', 'grateful'],
+    stanzas: [
+      [
+        'Should auld acquaintance be forgot,',
+        'And never brought to mind?',
+        'Should auld acquaintance be forgot,',
+        'And auld lang syne?',
+      ],
+      [
+        'For auld lang syne, my jo,',
+        'For auld lang syne,',
+        "We'll tak' a cup o' kindness yet,",
+        'For auld lang syne.',
+      ],
+      [
+        "And surely ye'll be your pint-stowp!",
+        "And surely I'll be mine!",
+        "And we'll tak' a cup o' kindness yet,",
+        'For auld lang syne.',
+      ],
+      [
+        'We twa hae run about the braes,',
+        "And pou'd the gowans fine;",
+        "But we've wander'd mony a weary fit,",
+        "Sin' auld lang syne.",
+      ],
+      [
+        "We twa hae paidl'd in the burn,",
+        'Frae morning sun till dine;',
+        "But seas between us braid hae roar'd",
+        "Sin' auld lang syne.",
+      ],
+      [
+        "And there's a hand, my trusty fiere!",
+        "And gie's a hand o' thine!",
+        "And we'll tak' a right gude-willie waught,",
+        'For auld lang syne.',
+      ],
+    ],
+  },
+  {
+    id: 'a-prayer-for-the-new-year',
+    title: 'A Prayer for the New Year',
+    whois: ['Mommy'],
+    author: 'Anonymous',
+    password: 'dana8',
+    moods: ['peaceful', 'grateful', 'hopeful'],
+    stanzas: [
+      [
+        'Lord, in this new year that begins,',
+        'Grant me the wisdom to see',
+        'The beauty in each passing day,',
+        'And the grace to simply be.',
+      ],
+      [
+        'Help me to cherish those I love,',
+        'To speak with kindness true,',
+        'To find the strength in quiet moments,',
+        'And start each day anew.',
+      ],
+      [
+        'May I walk with gentle footsteps,',
+        "Leave light where'er I go,",
+        'And may the seeds of hope I plant',
+        "In others' hearts still grow.",
+      ],
+      [
+        'As midnight bells ring out tonight,',
+        'I offer thanks for all—',
+        'For lessons learned and love received,',
+        'For rising after fall.',
+      ],
+    ],
+  },
+  {
+    id: 'midnight-threshold',
+    title: 'Midnight Threshold',
+    whois: ['Mommy'],
+    author: 'Anonymous',
+    password: 'dana9',
+    moods: ['reflective', 'hopeful'],
+    stanzas: [
+      [
+        'We stand upon the threshold now,',
+        'Where old meets new in time,',
+        'The clock strikes twelve, the world holds breath,',
+        'And midnight bells do chime.',
+      ],
+      [
+        'Behind us lie the faded days,',
+        'Of joy and sorrow mixed,',
+        'Before us stretches unknown paths,',
+        'With nothing yet affixed.',
+      ],
+      [
+        'So raise a glass to what has been,',
+        'And what is yet to come,',
+        'For in this moment, brief and bright,',
+        'All possibilities are one.',
+      ],
+    ],
+  },
+  {
+    id: 'winters-turning',
+    title: "Winter's Turning",
+    whois: ['Mommy'],
+    author: 'Anonymous',
+    password: 'dana10',
+    moods: ['peaceful', 'hopeful', 'grateful'],
+    stanzas: [
+      [
+        'The frost upon the window pane',
+        'Draws patterns silver-white,',
+        'As we gather close together',
+        'On this longest, darkest night.',
+      ],
+      [
+        'Yet in the darkness, hope persists,',
+        "A candle's steady flame,",
+        'Reminding us that light returns,',
+        'Though seasons never stay the same.',
+      ],
+      [
+        'So let us mark this turning point,',
+        'With reverence and with cheer,',
+        'For every ending holds within',
+        'The promise of a new frontier.',
+      ],
+      [
+        'The stars above bear witness now,',
+        'To vows we softly make,',
+        'To live with purpose, love with depth,',
+        'And give more than we take.',
+      ],
+    ],
+  },
+  {
+    id: 'fishaso',
+    title: "fish dog chuk",
+    whois: ['Aso ng isda ng chuk'],
+    author: 'Anonymous',
+    password: 'dana11',
+    moods: ['grateful', 'nostalgic', 'reflective'],
+    stanzas: [
+      [
+        "Achukanababs",
+        'Achuka chuka chuka chuka chukana',
+        'Chukana chukana babs',
+        'Achookanachukana',
+      ],
+      [
+        "Aso ng isda ng chuk ng fish",
+        "fish dog chuk",
+        'Aso ng aso ng achuka chuka chukanababs',
+        'Achookanachukanababs',
+      ],
+      [
+        'Chukanachukanachukana',
+        'Achukachukachukana',
+        "chukachukachukachukachukachukanababs",
+        'Achookanachukanababs',
+      ]
+    ],
+  },
+]
+
+export const SITE_PASSWORD = 'Obedience'
