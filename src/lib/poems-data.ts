@@ -667,7 +667,7 @@ export const poems: Poem[] = [
     title: "fish dog chuk",
     whois: ['Aso ng isda ng chuk'],
     author: 'Anonymous',
-    password: 'dana11',
+    password: 'chooks',
     moods: ['grateful', 'nostalgic', 'reflective'],
     stanzas: [
       [
