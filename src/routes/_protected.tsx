@@ -1,11 +1,10 @@
 import { redirect } from '@tanstack/react-router'
 import { createFileRoute } from '@tanstack/react-router'
-// import { authMiddleware } from '@/server/functions/auth'
+import { authMiddleware } from '@/server/functions/auth'
 
 export const Route = createFileRoute('/_protected')({
   loader: async ({ location }) => {
-    // const { currentUser } = await authMiddleware()
-    const currentUser = null
+    const { currentUser } = await authMiddleware()
 
     if (!currentUser) {
       if (

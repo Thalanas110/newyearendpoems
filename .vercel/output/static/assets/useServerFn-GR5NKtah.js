@@ -1,0 +1,2 @@
+import{S as e,T as t,k as n,x as r}from"./main-CGKdk5hd.js";var i=n(t(),1);function a(t){let n=r();return i.useCallback(async(...r)=>{try{let n=await t(...r);if(e(n))throw n;return n}catch(t){if(e(t))return t.options._fromLocation=n.state.location,n.navigate(n.resolveRedirect(t).options);throw t}},[n,t])}export{a as t};
+//# sourceMappingURL=useServerFn-GR5NKtah.js.map

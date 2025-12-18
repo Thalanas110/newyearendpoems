@@ -9,8 +9,7 @@ import netlify from '@netlify/vite-plugin-tanstack-start'
 
 const forSites =
   process.env?.FOR_SITES === 'true' ||
-  Boolean(process.env?.VERCEL) ||
-  Boolean(process.env?.NETLIFY)
+  Boolean(process.env?.VERCEL)
 
 const config = defineConfig({
   plugins: [
@@ -24,7 +23,7 @@ const config = defineConfig({
     forSites &&
     nitroV2Plugin({
       compatibilityDate: '2025-10-08',
-      preset: process.env.NETLIFY ? 'netlify' : process.env.VERCEL ? 'vercel' : 'node',
+      preset: process.env.VERCEL ? 'vercel' : 'node',
     }),
     devtoolsJson(),
     viteReact(),

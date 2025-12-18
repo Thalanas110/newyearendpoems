@@ -8,7 +8,7 @@ import appCss from '../styles.css?url'
 import type { QueryClient } from '@tanstack/react-query'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from 'next-themes'
-// import { authMiddleware } from '@/server/functions/auth'
+import { authMiddleware } from '@/server/functions/auth'
 
 interface MyRouterContext {
   queryClient: QueryClient
@@ -28,10 +28,10 @@ if (import.meta.env.VITE_INSTRUMENTATION_SCRIPT_SRC) {
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
   loader: async () => {
-    // const { currentUser } = await authMiddleware()
+    const { currentUser } = await authMiddleware()
 
     return {
-      currentUser: null as any,
+      currentUser,
     }
   },
   head: () => ({

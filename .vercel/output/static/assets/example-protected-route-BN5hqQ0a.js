@@ -1,0 +1,2 @@
+import{t as e}from"./useServerFn-GR5NKtah.js";import{C as t,b as n,k as r,s as i}from"./main-CGKdk5hd.js";function a(){let{currentUser:t}=n({from:`__root__`});return{currentUser:t,signOut:e(i)}}var o=r(t());function s({}){let{currentUser:e}=a();return(0,o.jsxs)(`div`,{children:[`Protected `,e?.email]})}export{s as component};
+//# sourceMappingURL=example-protected-route-BN5hqQ0a.js.map
