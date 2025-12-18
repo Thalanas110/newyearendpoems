@@ -121,7 +121,7 @@ export const poems: Poem[] = [
     title: 'Swimming in the Midst',
     whois: ['Mommy', 'Papa', 'Grandma', 'Grandpa'],
     author: 'Adriaan Dimate',
-    password: 'poem1',
+    password: 'applicationdevelopmentandemergingtechnologies',
     moods: ['grateful', 'reflective', 'hopeful'],
     stanzas: [
       [
