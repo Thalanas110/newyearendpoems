@@ -20,7 +20,7 @@ export function PoemPage({ poem, onBack }: PoemPageProps) {
 
   return (
     <>
-      <div className="min-h-screen bg-[#1A1F2C] relative">
+      <div className="min-h-screen relative">
         {/* Subtle background pattern */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
           {[...Array(20)].map((_, i) => (

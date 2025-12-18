@@ -69,7 +69,7 @@ export function PoemGrid({ onLogout }: PoemGridProps) {
   }
 
   return (
-    <div className="min-h-screen bg-[#1A1F2C] relative">
+    <div className="min-h-screen relative">
       {/* Logout button with confirmation */}
       <AlertDialog>
         <AlertDialogTrigger asChild>
