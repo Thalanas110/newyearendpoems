@@ -32,11 +32,10 @@ export function MoodFilter({ selectedMood, onMoodSelect }: MoodFilterProps) {
           className={`
                         px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300
                         border backdrop-blur-sm
-                        ${
-                          selectedMood === null
-                            ? 'bg-[#D4AF37]/20 border-[#D4AF37]/60 text-[#D4AF37]'
-                            : 'bg-[#1A1F2C]/60 border-[#D4AF37]/20 text-[#F5F0E6]/60 hover:border-[#D4AF37]/40 hover:text-[#F5F0E6]/80'
-                        }
+                        ${selectedMood === null
+              ? 'bg-[#D4AF37]/20 border-[#D4AF37]/60 text-[#D4AF37]'
+              : 'bg-[#1A1F2C]/60 border-[#D4AF37]/20 text-[#F5F0E6]/60 hover:border-[#D4AF37]/40 hover:text-[#F5F0E6]/80'
+            }
                     `}
         >
           <span className="mr-1.5">🌟</span>
@@ -53,11 +52,10 @@ export function MoodFilter({ selectedMood, onMoodSelect }: MoodFilterProps) {
             className={`
                             px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300
                             border backdrop-blur-sm group relative
-                            ${
-                              selectedMood === mood.id
-                                ? 'bg-[#D4AF37]/20 border-[#D4AF37]/60 text-[#D4AF37]'
-                                : 'bg-[#1A1F2C]/60 border-[#D4AF37]/20 text-[#F5F0E6]/60 hover:border-[#D4AF37]/40 hover:text-[#F5F0E6]/80'
-                            }
+                            ${selectedMood === mood.id
+                ? 'bg-[#D4AF37]/20 border-[#D4AF37]/60 text-[#D4AF37]'
+                : 'bg-[#1A1F2C]/60 border-[#D4AF37]/20 text-[#F5F0E6]/60 hover:border-[#D4AF37]/40 hover:text-[#F5F0E6]/80'
+              }
                         `}
           >
             <span className="mr-1.5">{mood.emoji}</span>
