@@ -5,7 +5,6 @@ import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import devtoolsJson from 'vite-plugin-devtools-json'
 import { nitroV2Plugin } from '@tanstack/nitro-v2-vite-plugin'
-import netlify from '@netlify/vite-plugin-tanstack-start'
 
 const forSites =
   process.env?.FOR_SITES === 'true' ||
@@ -19,7 +18,6 @@ const config = defineConfig({
     }),
     tailwindcss(),
     tanstackStart(),
-    netlify(),
     forSites &&
     nitroV2Plugin({
       compatibilityDate: '2025-10-08',
