@@ -5,8 +5,12 @@ import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import devtoolsJson from 'vite-plugin-devtools-json'
 import { nitroV2Plugin } from '@tanstack/nitro-v2-vite-plugin'
+import netlify from '@netlify/vite-plugin-tanstack-start'
 
-const forSites = process.env?.FOR_SITES === 'true' || Boolean(process.env?.VERCEL)
+const forSites =
+  process.env?.FOR_SITES === 'true' ||
+  Boolean(process.env?.VERCEL) ||
+  Boolean(process.env?.NETLIFY)
 
 const config = defineConfig({
   plugins: [
@@ -16,10 +20,11 @@ const config = defineConfig({
     }),
     tailwindcss(),
     tanstackStart(),
+    netlify(),
     forSites &&
     nitroV2Plugin({
       compatibilityDate: '2025-10-08',
-      preset: process.env.VERCEL ? 'vercel' : 'node',
+      preset: process.env.NETLIFY ? 'netlify' : process.env.VERCEL ? 'vercel' : 'node',
     }),
     devtoolsJson(),
     viteReact(),
