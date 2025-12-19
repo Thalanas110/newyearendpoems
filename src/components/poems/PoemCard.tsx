@@ -100,7 +100,7 @@ export function PoemCard({ poem, index, onUnlock, isUnlocked }: PoemCardProps) {
             {poemWhois.map((whois) => (
               <span
                 key={whois!.id}
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs bg-[#6E59A5]/10 text-[#6E59A5]/70 border border-[#6E59A5]/20"
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs bg-[#6E59A5]/20 text-[#E0D4FF] border border-[#6E59A5]/30"
               >
                 <span>{whois!.emoji}</span>
                 <span>{whois!.label}</span>
