@@ -98,6 +98,8 @@ export function PoemGrid({ onLogout }: PoemGridProps) {
     sessionStorage.setItem(UNLOCKED_POEMS_KEY, JSON.stringify(newUnlocked))
     // Navigate to the poem page
     setSelectedPoemId(poemId)
+    // Scroll to top
+    window.scrollTo(0, 0)
   }, [unlockedPoems])
 
   const handleBack = useCallback(() => {
@@ -108,6 +110,8 @@ export function PoemGrid({ onLogout }: PoemGridProps) {
       sessionStorage.setItem(UNLOCKED_POEMS_KEY, JSON.stringify(newUnlocked))
     }
     setSelectedPoemId(null)
+    // Scroll to top
+    window.scrollTo(0, 0)
   }, [selectedPoemId, unlockedPoems])
 
   // If a poem is selected, show the full poem page
