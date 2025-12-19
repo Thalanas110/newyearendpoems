@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { Lock, Eye } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { MOODS, type Poem } from '@/lib/poems-data'
+import { MOODS, WHOIS, type Poem } from '@/lib/poems-data'
 
 interface PoemCardProps {
   poem: Poem
@@ -23,6 +23,11 @@ export function PoemCard({ poem, index, onUnlock, isUnlocked }: PoemCardProps) {
   // Get mood details for this poem
   const poemMoods = poem.moods
     .map((moodId) => MOODS.find((m) => m.id === moodId))
+    .filter(Boolean)
+
+  // Get whois details for this poem
+  const poemWhois = poem.whois
+    .map((whoisId) => WHOIS.find((w) => w.id === whoisId))
     .filter(Boolean)
 
   const handleUnlock = () => {
@@ -86,6 +91,19 @@ export function PoemCard({ poem, index, onUnlock, isUnlocked }: PoemCardProps) {
               >
                 <span>{mood!.emoji}</span>
                 <span>{mood!.label}</span>
+              </span>
+            ))}
+          </div>
+
+          {/* Whois badges */}
+          <div className="flex flex-wrap gap-2 mt-2">
+            {poemWhois.map((whois) => (
+              <span
+                key={whois!.id}
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs bg-[#6E59A5]/10 text-[#6E59A5]/70 border border-[#6E59A5]/20"
+              >
+                <span>{whois!.emoji}</span>
+                <span>{whois!.label}</span>
               </span>
             ))}
           </div>
