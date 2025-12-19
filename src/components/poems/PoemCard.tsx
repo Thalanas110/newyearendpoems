@@ -99,7 +99,7 @@ export function PoemCard({ poem, index, onUnlock, isUnlocked }: PoemCardProps) {
           {previewStanza.map((line, lineIdx) => (
             <p
               key={lineIdx}
-              className="text-[#F5F0E6]/85 font-serif text-base md:text-lg leading-relaxed"
+              className="text-[#F5F0E6]/85 font-serif text-base md:text-lg leading-relaxed break-words hyphens-auto"
             >
               {line}
             </p>

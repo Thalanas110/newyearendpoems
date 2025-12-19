@@ -127,7 +127,7 @@ export function PoemPage({ poem, onBack }: PoemPageProps) {
                   {stanza.map((line, lineIdx) => (
                     <p
                       key={lineIdx}
-                      className="text-[#F5F0E6]/90 font-serif text-lg md:text-xl leading-relaxed text-center"
+                      className="text-[#F5F0E6]/90 font-serif text-lg md:text-xl leading-relaxed text-center break-words hyphens-auto"
                     >
                       {line}
                     </p>
