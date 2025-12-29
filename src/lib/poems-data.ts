@@ -543,34 +543,108 @@ export const poems: Poem[] = [
     ],
   },
   {
-    id: 'new-years-eve',
-    title: "New Year's Eve",
-    whois: ['Mommy'],
-    author: 'John Clare',
-    password: 'dana5',
-    moods: ['hopeful', 'nostalgic', 'peaceful'],
+    // poem 6
+    id: 'grandma-of-the-year',
+    title: 'Grandma of the Year',
+    whois: ['Grandma'],
+    author: 'Francis Lawrence P. Morales',
+    password: 'grandma6',
+    moods: ['grateful', 'reflective', 'nostalgic'],
     stanzas: [
       [
-        'Old year, farewell! and welcome, new!',
-        'With all thy hopes and fears;',
-        'We part with sighs, we meet with tears,',
-        'And mingle joy with sorrow too.',
+        "I'm sorry for the times we clashed over food,",
+        'For tantrums, stubbornness, and attitude.',
+        'For every bite that became a battlefield,',
+        'And every spoonful that refused to yield.',
       ],
       [
-        "The old year's sun has set at last,",
-        'Its light no more we see;',
-        'But memory holds the happy past,',
-        'And hope looks on to thee.',
+        "I'm sorry for the swimming fights we had,",
+        'For every splash, every shout, every time I got mad.',
+        'All for lessons you knew I had to learn,',
+        'Even when my defiance made your patience burn.',
       ],
       [
-        'New year, we greet thee with a prayer,',
-        'That all thy days be bright;',
-        'That peace and love be everywhere,',
-        'And wrong give way to right.',
+        "I'm sorry for the math battles we fought,",
+        'For every wrong answer and lesson you taught.',
+        'For every equation that made us both shout,',
+        'But every struggle was love, without a doubt.',
+      ],
+      [
+        "I'm sorry for the shouting matches that came,",
+        'From stubbornness and pride, my own little flame.',
+        'Every argument, every raised voice, every day,',
+        'Was you shaping me in your quiet, relentless way.',
+      ],
+      [
+        "I'm sorry for the stubbornness I held tight,",
+        'For making your care feel like a fight.',
+        'For forgetting sometimes, in my headstrong ways,',
+        'The depth of your love in those long, hard days.',
+      ],
+      [
+        'Yet I remember the stage lights, the applause,',
+        'Competitions and awards, without pause.',
+        'Every honor I earned, every prize I received,',
+        'Was built on the care and guidance you believed.',
+      ],
+      [
+        "I'm grateful for the hours you spent awake,",
+        'Nursing my sickness, my every ache.',
+        'Through fevers, colds, and nights long and still,',
+        'You were the warmth that healed, the strength of will.',
+      ],
+      [
+        "I'm grateful for your patience, steadfast and true,",
+        'For holding me when storms and tantrums blew.',
+        'Even when I argued, even when I fought,',
+        'You gave all you could, more than I ever sought.',
+      ],
+      [
+        "I'm grateful for the lessons that stung at first,",
+        'The hard words, the corrections, the occasional burst.',
+        'Each one a stepping stone, a quiet hand,',
+        'Leading me gently to understand.',
+      ],
+      [
+        "I'm grateful for the stories and songs you told,",
+        'For laughter, for guidance, for hands to hold.',
+        'For the way you made life feel safe and bright,',
+        'Even in the shadows, you brought light.',
+      ],
+      [
+        "I'm grateful for mornings and evenings shared,",
+        'For every meal, every hug, every care.',
+        'For being present when life pulled me apart,',
+        'And never once faltering in heart.',
+      ],
+      [
+        "I'm grateful for the sacrifices you made,",
+        'The moments of quiet love that never fade.',
+        'Even in disagreement, even in strife,',
+        'Your heart stayed constant, shaping my life.',
+      ],
+      [
+        "I'm grateful for you just being there,",
+        'For showing me love in every prayer.',
+        'Through fights and stubbornness, I now see,',
+        'Your devotion has always been a gift to me.',
+      ],
+      [
+        "I'm grateful for lessons beyond school and grades,",
+        'For resilience, for kindness, the love that never fades.',
+        'All the shouting, all the struggles, all the fight,',
+        'Were ways you taught me to stand, to do right.',
+      ],
+      [
+        'Grandma, I apologize and thank you too,',
+        'For every battle, every care, everything you do.',
+        'I may have been stubborn, loud, and wild,',
+        'But you shaped me gently, endlessly, my guide.',
       ],
     ],
   },
   {
+    // poem 7
     id: 'the-old-year',
     title: 'The Old Year',
     whois: ['Mommy'],
@@ -605,6 +679,7 @@ export const poems: Poem[] = [
     ],
   },
   {
+    // poem 8
     id: 'auld-lang-syne',
     title: 'Auld Lang Syne',
     whois: ['Mommy'],
@@ -651,6 +726,7 @@ export const poems: Poem[] = [
     ],
   },
   {
+    // poem 9
     id: 'a-prayer-for-the-new-year',
     title: 'A Prayer for the New Year',
     whois: ['Mommy'],
@@ -685,6 +761,7 @@ export const poems: Poem[] = [
     ],
   },
   {
+    // poem 10
     id: 'midnight-threshold',
     title: 'Midnight Threshold',
     whois: ['Mommy'],
@@ -712,7 +789,7 @@ export const poems: Poem[] = [
       ],
     ],
   },
-  {
+  { // poem 11
     id: 'winters-turning',
     title: "Winter's Turning",
     whois: ['Mommy'],
@@ -746,7 +823,7 @@ export const poems: Poem[] = [
       ],
     ],
   },
-  {
+  { // poem 12
     id: 'fishaso',
     title: "fish dog chuk",
     whois: ['Aso ng isda ng chuk'],
@@ -756,24 +833,69 @@ export const poems: Poem[] = [
     stanzas: [
       [
         "Achukanababs",
-        'Achuka chuka chuka chuka chukana',
-        'Chukana chukana babs',
-        'Achookanachukana',
+        "Achuka chuka chuka chuka chukana",
+        "Chukana chukana babs",
+        "Achookanachukana",
       ],
       [
         "Aso ng isda ng chuk ng fish",
         "fish dog chuk",
-        'Aso ng aso ng achuka chuka chukanababs',
-        'Achookanachukanababs',
+        "Aso ng aso ng achuka chuka chukanababs",
+        "Achookanachukanababs",
       ],
       [
-        'Chukanachukanachukana',
-        'Achukachukachukana',
+        "Chukanachukanachukana",
+        "Achukachukachukana",
         "chukachukachukachukachukachukanababs",
-        'Achookanachukanababs',
-      ]
+        "Achookanachukanababs",
+      ],
+      [
+        "Achukanababs Achukanababs",
+        "Achuka chuka chuka chukana",
+        "Chukana babs chukana",
+        "Achookanachukana",
+      ],
+      [
+        "Chukana achuka babs",
+        "chuka chukana chuka",
+        "Achukanababs chuk",
+        "Achookanachukana",
+      ],
+      [
+        "Achuka chuka chuka",
+        "chuka chuka chukana",
+        "chuka chukana chukana",
+        "chukana babs",
+      ],
+      [
+        "Achuka",
+        "Achuka chuka",
+        "Achuka chuka chukana",
+        "Achukanababs",
+      ],
+      [
+        "chuk chuk chuk chuk",
+        "chuka chukana chuk",
+        "achuka achuka babs",
+        "Achookanachukanababs",
+      ],
+
+      [
+        "Aso ng isda ng fish dog",
+        "fish dog chuk chuk",
+        "Aso ng achuka chukana",
+        "Achookanachukanababs",
+      ],
+
+      [
+        "Achuka chuka chukana babs",
+        "fish dog chuk",
+        "chukachukachukanababs",
+        "Achookanachukana",
+      ],
     ],
   },
+
 ]
 
 export const SITE_PASSWORD = 'Obedience'
